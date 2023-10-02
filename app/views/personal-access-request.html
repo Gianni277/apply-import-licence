@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+ 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">3 of 3</span>
+    <h1 class="govuk-heading-xl">
+      Access request
+    </h1>
+   
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <h1 class="govuk-heading-m">
+          Access request type
+        </h1>
+        <label class="govuk-label" for="one-quarter">
+          Select one option. You will be able to submit additional requests once you are granted access.
+        </label>
+        <br>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Request access to act as an importer
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                What are you importing and where are you importing it from?
+              </label>
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
+              Request access to act as an agent for an importer
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                What are you importing and where are you importing it from?
+              </label>
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+            <!-- Show the hidden input box when contact-3 is selected -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address">
+                Agent's address
+              </label>
+              <textarea class="govuk-textarea" id="address" name="address" rows="5" autocomplete="street-address"></textarea>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/personal-access-request-ii"
+    }) }}
+  </div>
+</div>
+
+        
+
+{% endblock %}
+
+
+
+
+
+
+
