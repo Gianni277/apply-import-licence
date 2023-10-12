@@ -16,7 +16,7 @@
 <div class="govuk-form-group">
   <span class="govuk-caption-m">2 of 3</span>
   <h1 class="govuk-heading-xl">
-    Is there already an account set up with the private indidvidual's details?
+    Has anyone else set up an account with the private indidvidual's details?
   </h1>
   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
     <div class="govuk-radios__item">
@@ -55,7 +55,7 @@
     if (yesRadio.checked) {
       window.location.href = "ask-individual-admin";  // URL for "Yes" option
     } else if (noRadio.checked) {
-      window.location.href = "/personal-access-request";  // URL for "No" option
+      window.location.href = "/name-of-importer";  // URL for "No" option
     }
 
     return false;  // Prevent form submission
