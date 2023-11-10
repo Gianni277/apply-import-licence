@@ -9,11 +9,32 @@
   {{ govukHeader() }}
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    var $element = document.querySelector('#step-by-step-navigation')
-    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
-  </script>
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Business and industry",
+        href: "#"
+      },
+      {
+        text: "Trade and investment",
+        href: "#"
+      },
+      {
+        text: "Importing",
+        href: "#"
+      },
+      {
+        text: "Apply for an import licence"
+      }
+    ]
+  }) }}
+
 {% endblock %}
 
 
@@ -42,150 +63,32 @@
           </a>
         </div>
 
-        <div class="govuk-button-group">
-          <a class="govuk-link govuk-link--no-visited-state" href="/help">Help using this service</a>
-        </div>
             
   </div>
 
   <div class="govuk-grid-column-one-third">
 
-    <div class="app-step-nav-related app-step-nav-related--singular">
-      <h2 class="app-step-nav-related__heading">
-        <span class="app-step-nav-related__pretitle">Obtaining your licence: step by step</span>
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        More information
       </h2>
-      <p class="app-step-nav__paragraph"> An explanation of how to go about obtaining an import licence using this service.</p>
-    </div>
-
-    <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav govuk-!-display-none-print js-hidden" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
-      <ol class="app-step-nav__steps">
-        <li class="app-step-nav__step js-step app-step-nav__step--active" aria-current="step" id="check-you-re-allowed-to-drive">
-          <div class="app-step-nav__header js-toggle-panel" data-position="1">
-            <h3 class="app-step-nav__title">
-              <span class="app-step-nav__circle app-step-nav__circle--number">
-                <span class="app-step-nav__circle-inner">
-                  <span class="app-step-nav__circle-background">
-                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                  </span>
-                </span>
-              </span>
-
-              <span class="js-step-title">
-                Check if you need a licence
-              </span>
-            </h3>
-          </div>
-
-          <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
-            <p class="app-step-nav__paragraph"><a class="govuk-link govuk-link--no-visited-state" href="/paths-2">Check if you need a licence</a> based on destination country, certificate type and goods type.</p>
-        
-
-
-        </li>
-        <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
-          <div class="app-step-nav__header js-toggle-panel" data-position="2">
-            <h3 class="app-step-nav__title">
-              <span class="app-step-nav__circle app-step-nav__circle--number">
-                <span class="app-step-nav__circle-inner">
-                  <span class="app-step-nav__circle-background">
-                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                  </span>
-                </span>
-              </span>
-
-              <span class="js-step-title">
-                Read the guidance applicable to your goods
-              </span>
-            </h3>
-          </div>
-
-          <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-2">
-            <p class="app-step-nav__paragraph">Read the guidance for your goods to understand the licensing requirements. 
-              Stay updated to comply with regulations and ensure smooth import processes.</p>
-
-           
-        
-
-         
-
-        </li>
-        <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test">
-          <div class="app-step-nav__header js-toggle-panel" data-position="3">
-            <h3 class="app-step-nav__title">
-              <span class="app-step-nav__circle app-step-nav__circle--number">
-                <span class="app-step-nav__circle-inner">
-                  <span class="app-step-nav__circle-background">
-                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                  </span>
-                </span>
-              </span>
-
-              <span class="js-step-title">
-                Sign in or create an account
-              </span>
-            </h3>
-          </div>
-
-          <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-theory-test-3">
-            <p class="app-step-nav__paragraph">The account will allow you to manage applications, add a colleague to your account and access support. </p>
-
-           
-            </li>
-            <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test">
-              <div class="app-step-nav__header js-toggle-panel" data-position="4">
-                <h3 class="app-step-nav__title">
-                  <span class="app-step-nav__circle app-step-nav__circle--number">
-                    <span class="app-step-nav__circle-inner">
-                      <span class="app-step-nav__circle-background">
-                        <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                      </span>
-                    </span>
-                  </span>
-    
-                  <span class="js-step-title">
-                    Apply for a licence
-                  </span>
-                </h3>
-              </div>
-    
-              <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-theory-test-4">
-                <p class="app-step-nav__paragraph">Complete the form accurately, submit required documents and track the progress. 
-                  Await the outcome after review. Promptly respond to requests for additional information, if needed.. </p>
-       
-                </li>
-                <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test">
-                  <div class="app-step-nav__header js-toggle-panel" data-position="5">
-                    <h3 class="app-step-nav__title">
-                      <span class="app-step-nav__circle app-step-nav__circle--number">
-                        <span class="app-step-nav__circle-inner">
-                          <span class="app-step-nav__circle-background">
-                            <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 5<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
-                          </span>
-                        </span>
-                      </span>
-        
-                      <span class="js-step-title">
-                        Issuance, rejection or renewal
-                      </span>
-                    </h3>
-                  </div>
-        
-                  <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-theory-test-6">
-                    <p class="app-step-nav__paragraph"> You will receive an approval, a detailed explanation for a rejection or a a renewal to ensure smooth import operations. </p>
-
-           
-       
-
-        </li>
-      </ol>
-    </div>
-
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="export-form-updated">
+              Check if you need a licence
+            </a>
+          </li>
+          <li>
+            <a href="help">
+              Help using this service
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
   </div>
-
 </div>
 
-
-</div>
-</div>
 {% endblock %}

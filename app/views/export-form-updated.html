@@ -13,172 +13,52 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Import details</h1>
-
-      <h2 class="govuk-heading-m">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
         Do import sanctions apply to your goods?
-      </h2>
-
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="contact-import" name="contact" type="radio" value="import" checked data-aria-controls="conditional-contact-import">
-          <label class="govuk-label govuk-radios__label" for="contact-import">
-            Yes
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="contact-export" name="contact" type="radio" value="export" data-aria-controls="conditional-contact-export">
-          <label class="govuk-label govuk-radios__label" for="contact-export">
-            No
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="contact-other" name="contact" type="radio" value="other" data-aria-controls="conditional-contact-other">
-          <label class="govuk-label govuk-radios__label" for="contact-other">
-            I don't know
-          </label>
-        </div>
-          </div>
-        </div>
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="CFS">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          Yes
+        </label>
       </div>
-      <br>
-      <p>
-        <a href="https://www.gov.uk/guidance/current-arms-embargoes-and-other-restrictions" target="_blank">Find out more about trade sanctions</a>
-      </p>
-      </fieldset>
-
-<br>
-
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-
-        {{ govukSelect({
-          id: "subject",
-          name: "subject",
-          label: {
-            text: "Choose the country of origin",
-            classes: "govuk-label--m"
-          },
-            hint: {
-            text: "The country where the goods were made"
-          },
-          items: [
-            {
-              value: "choose",
-              text: "Choose country",
-              selected: true
-            },
-            {
-              value: "turkey",
-              text: "Turkey"
-            },
-            {
-              value: "uae",
-              text: "U.A.E"
-            },
-            {
-              value: "uganda",
-              text: "Uganda"
-            },
-            {
-              value: "ukraine",
-              text: "Ukraine"
-            },
-            {
-              value: "unitedkingdom",
-              text: "United Kingdom"
-            },
-            {
-              value: "unitedstates",
-              text: "United States"
-            },
-            {
-              value: "uruguay",
-              text: "Uruguay"
-            },
-            {
-              value: "uzbekistan",
-              text: "Uzbekistan"
-            },
-            {
-              value: "vietnam",
-              text: "Vietnam"
-            }
-           ]
-        
-        }) }}
-
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-
-        {{ govukSelect({
-          id: "subject",
-          name: "subject",
-          label: {
-            text: "Choose the country of consignment",
-            classes: "govuk-label--m"
-          },
-            hint: {
-            text: "Which country will you send the goods from?"
-          },
-          items: [
-            {
-              value: "choose",
-              text: "Choose country",
-              selected: true
-            },
-            {
-              value: "turkey",
-              text: "Turkey"
-            },
-            {
-              value: "uae",
-              text: "U.A.E"
-            },
-            {
-              value: "uganda",
-              text: "Uganda"
-            },
-            {
-              value: "ukraine",
-              text: "Ukraine"
-            },
-            {
-              value: "unitedkingdom",
-              text: "United Kingdom"
-            },
-            {
-              value: "unitedstates",
-              text: "United States"
-            },
-            {
-              value: "uruguay",
-              text: "Uruguay"
-            },
-            {
-              value: "uzbekistan",
-              text: "Uzbekistan"
-            },
-            {
-              value: "vietnam",
-              text: "Vietnam"
-            }
-           ]
-        
-        }) }}
-
-
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/import-form-part-2"
-        }) }}
-        
-        
-      </form>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="CoM">
+        <label class="govuk-label govuk-radios__label" for "whereDoYouLive-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="GMPC">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+          I don't know
+        </label>
+      </div>
     </div>
-  </div>
+  </fieldset>
+</div>
+
+<p>
+  <a href="https://www.gov.uk/guidance/current-arms-embargoes-and-other-restrictions" target="_blank">Find out more about trade sanctions</a>
+</p>
+</fieldset>
+
+{{ govukButton({
+  text: "Continue",
+  attributes: {
+    "data-action": "form-submit",
+    "data-submitting-text": "Submitting...",
+    "data-prevent-double-click": "true"
+  },
+  href: "export-form-updated-2",
+  id: "continue-button"
+}) }}
+
 {% endblock %}
 
 
